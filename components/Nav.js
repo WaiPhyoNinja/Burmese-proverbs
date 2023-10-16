@@ -1,12 +1,13 @@
 "use client";
 
-import { getProviders, signIn, signOut } from "next-auth/react";
+import { getProviders, signIn, signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Nav = () => {
     const isLoggedIn = true;
+    const { data : session } = useSession();
     const [providers, setProviders] = useState(null)
 
     useEffect(() => {
@@ -27,17 +28,16 @@ const Nav = () => {
                     height={30}
                     className='object-contain'
                 />
-                <p className='logo_text'>EasyAIPrompt</p>
+                <p className='logo_text'>Burmese</p>
             </Link>
             <div className="sm:flex hidden">
-                {isLoggedIn ? (
+                {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
                         <Link href='/create-prompt' className='black_btn'>Create Post</Link>
                         <button type='button' onClick={signOut} className='outline_btn'>Sign Out</button>
-                        {/* <button type='button' className='outline_btn'>Sign Out</button> */}
 
                         <Link href='/profile'>
-                            {/* <Image src={session?.user.image} width={37} height={37} className='rounded-full' alt='profile' /> */}
+                            <Image src={session?.user.image} width={37} height={37} className='rounded-full' alt='profile' />
                         </Link>
                     </div>
                 ) : (
