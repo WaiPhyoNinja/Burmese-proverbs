@@ -41,7 +41,7 @@ const SelfProfile = () => {
   return (
     <Profile
       name='My'
-      desc='Welcome to your personalized profile page. Share your exceptional prompts here'
+      desc= 'Welcome to Your Profile Page. Share Your Exceptional Poetry Here'
       data={myPosts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}

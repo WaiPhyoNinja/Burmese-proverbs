@@ -28,7 +28,7 @@ const Nav = () => {
                     height={30}
                     className='object-contain'
                 />
-                <p className='logo_text'>Burmese</p>
+                <p className='logo_text'>Poet</p>
             </Link>
             <div className="sm:flex hidden">
                 {session?.user ? (

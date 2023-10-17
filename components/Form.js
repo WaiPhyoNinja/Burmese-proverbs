@@ -7,17 +7,17 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <span className='blue_gradient'></span>
       </h4>
       <p className='desc text-left max-w-md'>
-        သင့် ကြားဖူး သိဖူး ခဲ့သော စကားပုံများကို ဤနေရာ တွင် ရေးသား၍ ပြန်လည် မျှဝေပါ
+      Write and Share Poems You've Listened to and Recognize Here
       </p>
       <form onSubmit={handleSubmit} className='mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism'>
         <label>
-          <span className='font-satoshi font-semibold text-base text-gray-700'>စာ ရေးသားရန်</span>
+          <span className='font-satoshi font-semibold text-base text-gray-700'>Compose a Letter</span>
           <textarea value={post.prompt} onChange={e => setPost({ ...post, prompt: e.target.value })} placeholder='Write your post here' required className='form_textarea' />
         </label>
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
             <span className='font-normal'>
-             Tag (#ကဗျာ, #စကားပုံ)
+             Tag (#ကြည်ဇော်အေး, #အောင်ချိမ့်)
             </span>
           </span>
           <input value={post.tag} onChange={e => setPost({ ...post, tag: e.target.value })} type='text' placeholder='#Tag' required className='form_input' />
