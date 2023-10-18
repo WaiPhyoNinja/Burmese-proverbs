@@ -30,11 +30,11 @@ const Nav = () => {
                 />
                 <p className='logo_text'>Poet</p>
             </Link>
-            <div className="sm:flex hidden">
+            <div className="sm:flex">
                 {session?.user ? (
                     <div className='flex gap-3 md:gap-5'>
-                        <Link href='/create-prompt' className='black_btn'>Create Post</Link>
-                        <button type='button' onClick={signOut} className='outline_btn'>Sign Out</button>
+                        <Link href='/create-prompt' className='black_btn mb-2 md:mb-0 text-sm sm:text-base'>Create Post</Link>
+                        <button type='button' onClick={signOut} className='outline_btn mb-2 md:mb-0 text-sm md:text-base'>Sign Out</button>
 
                         <Link href='/profile'>
                             <Image src={session?.user.image} width={37} height={37} className='rounded-full' alt='profile' />
