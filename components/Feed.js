@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import PromptList from "./PromptList";
 
-const Feed = () => {
+const Feed = ({handleLikeClick}) => {
   const [searchText, setSearchText] = useState("");
   const [searchedResults, setSearchedResults] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
@@ -36,7 +36,15 @@ const Feed = () => {
       <form className='relative w-full flex-center'>
         <input type='text' placeholder='Search for prompt/tag' value={searchText} onChange={handleSearchChange} required className='search_input peer' />
       </form>
-      {searchText ? <PromptList data={searchedResults} handleTagClick={handleTagClick} /> : <PromptList data={allPosts} handleTagClick={handleTagClick} />}
+      {searchText ? <PromptList
+                        data={searchedResults}
+                        handleTagClick={handleTagClick} 
+                        handleLikeClick={handleLikeClick}
+                        /> : 
+                        <PromptList 
+                             data={allPosts}
+                             handleTagClick={handleTagClick}
+                             handleLikeClick={handleLikeClick}/>}
     </section>
   )
 }
